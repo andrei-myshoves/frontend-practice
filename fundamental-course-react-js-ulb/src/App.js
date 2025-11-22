@@ -1,16 +1,17 @@
-import React from 'react';
+import React from "react";
 import "./styles/App.css";
-import About from './pages/About';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Posts from './pages/Posts';
+import About from "./pages/About";
+import { BrowserRouter, Link, Routes, Route, Navigate } from "react-router-dom";
+import Posts from "./pages/Posts";
+import Navbar from "./components/UI/Navbar/Navbar";
+import Error from "./pages/Error";
+import AppRouter from "./components/AppRouter";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/posts" element={<Posts />} />
-      </Routes>
+      <Navbar />
+      <AppRouter />
     </BrowserRouter>
   );
 }
